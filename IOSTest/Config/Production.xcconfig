@@ -1,0 +1,18 @@
+//
+//  Production.xcconfig
+//  IOSTest
+//
+//  Created by Adarsh Manoharan on 17/04/2 R.
+//  Copyright © 2 Adarsh Manoharan. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+ROOT_URL = https:/$()/dl.dropboxusercontent.com/
+
+// API KEY
+API_KEY = 2iodh4vg0eortkl
+
+// App Settings
+APP_NAME = iOS Test (Prod)
+APP_BUNDLE_ID = com.adarsh.ios_test
