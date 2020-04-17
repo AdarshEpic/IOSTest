@@ -9,37 +9,43 @@
 import UIKit
 import Masonry
 
-protocol IOSTHomeViewControllerProtocol {
-    
-}
-
 class IOSTHomeViewController: UIViewController {
-    
+    // properties
     private var contanerView: UIView!
+    private var factsListViewController: IOSTFactsListTableViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         setupView()
-
     }
     
-    private func setupView() {
-        self.contanerView = UIView()
-        self.view.addSubview(contanerView)
-        contanerView?.mas_makeConstraints({ (make) in
-            make?.top.equalTo()(view.mas_topMargin)?.with().offset()(0)
-            make?.left.equalTo()(view.mas_left)?.with().offset()(0)
-            make?.right.equalTo()(view.mas_right)?.with().offset()(0)
-            make?.bottom.equalTo()(view.mas_bottom)?.with().offset()(0)
-            return()
-        })
-        contanerView.backgroundColor = .red
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = ""
     }
     
 }
 // MARK: Initial Setup Fragment
 extension IOSTHomeViewController {
+    //initial setup
+    private func setupView() {
+        //setupContainer
+        self.contanerView = UIView()
+        self.view.addSubview(contanerView)
+        MasonryHelper.addConstraint(parentView: self.view, view: contanerView,
+                                    toViews: [.bottomMargin, .topMargin, .right, .left])
+        contanerView.backgroundColor = .red
+        //setupTableViewController
+        self.factsListViewController = IOSTFactsListTableViewController()
+        //set from child view controller
+        self.factsListViewController.didSetTitle = {[weak self] title in
+            self?.navigationItem.title = title // will trigger this when setting item from FactsListTVC
+        }
+        self.addChild(self.factsListViewController)
+        self.contanerView.addSubview(self.factsListViewController.view)
+        MasonryHelper.addConstraint(parentView: contanerView,
+                                    view: self.factsListViewController.view, toViews: [.top, .bottom, .right, .left])
+    }
     
 }

@@ -8,9 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		110B2512961F4E3A1AA10937 /* Pods_IOSTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CDAAFCA668F10B81F5A3935 /* Pods_IOSTestTests.framework */; };
-		467AE99B2449D5010004CDD4 /* IOSTGenericTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467AE99A2449D5010004CDD4 /* IOSTGenericTableViewController.swift */; };
+		467AE99B2449D5010004CDD4 /* IOSTFactsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467AE99A2449D5010004CDD4 /* IOSTFactsListTableViewController.swift */; };
 		467AE99E2449D7A80004CDD4 /* IOSTHomeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467AE99D2449D7A80004CDD4 /* IOSTHomeListTableViewCell.swift */; };
 		467AE9A02449DC910004CDD4 /* FactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467AE99F2449DC910004CDD4 /* FactsModel.swift */; };
+		467AE9A22449F4DC0004CDD4 /* MasonryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467AE9A12449F4DC0004CDD4 /* MasonryHelper.swift */; };
+		467AE9A4244A0CBE0004CDD4 /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467AE9A3244A0CBE0004CDD4 /* ImageViewExtension.swift */; };
+		467AE9A6244A237A0004CDD4 /* IOSTHomeViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467AE9A5244A237A0004CDD4 /* IOSTHomeViewProtocols.swift */; };
+		467AE9A8244A23BF0004CDD4 /* IOSTFactsListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467AE9A7244A23BF0004CDD4 /* IOSTFactsListProtocols.swift */; };
 		46F778842449A6B6006C4ED4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F778832449A6B6006C4ED4 /* AppDelegate.swift */; };
 		46F778862449A6B6006C4ED4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F778852449A6B6006C4ED4 /* SceneDelegate.swift */; };
 		46F7788D2449A6B8006C4ED4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46F7788C2449A6B8006C4ED4 /* Assets.xcassets */; };
@@ -47,9 +51,13 @@
 
 /* Begin PBXFileReference section */
 		31C4CE56627D0F25C075287A /* Pods-IOSTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSTest.release.xcconfig"; path = "Target Support Files/Pods-IOSTest/Pods-IOSTest.release.xcconfig"; sourceTree = "<group>"; };
-		467AE99A2449D5010004CDD4 /* IOSTGenericTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSTGenericTableViewController.swift; sourceTree = "<group>"; };
+		467AE99A2449D5010004CDD4 /* IOSTFactsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSTFactsListTableViewController.swift; sourceTree = "<group>"; };
 		467AE99D2449D7A80004CDD4 /* IOSTHomeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSTHomeListTableViewCell.swift; sourceTree = "<group>"; };
 		467AE99F2449DC910004CDD4 /* FactsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsModel.swift; sourceTree = "<group>"; };
+		467AE9A12449F4DC0004CDD4 /* MasonryHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasonryHelper.swift; sourceTree = "<group>"; };
+		467AE9A3244A0CBE0004CDD4 /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
+		467AE9A5244A237A0004CDD4 /* IOSTHomeViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSTHomeViewProtocols.swift; sourceTree = "<group>"; };
+		467AE9A7244A23BF0004CDD4 /* IOSTFactsListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSTFactsListProtocols.swift; sourceTree = "<group>"; };
 		46F778802449A6B6006C4ED4 /* IOSTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46F778832449A6B6006C4ED4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46F778852449A6B6006C4ED4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				46F778D12449BA44006C4ED4 /* NavigationController */,
+				46F778CE2449B90F006C4ED4 /* FaqList */,
 				46F778CD2449B905006C4ED4 /* Home */,
 			);
 			path = Controller;
@@ -202,6 +211,8 @@
 		46F778B62449A716006C4ED4 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				467AE9A12449F4DC0004CDD4 /* MasonryHelper.swift */,
+				467AE9A3244A0CBE0004CDD4 /* ImageViewExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -235,7 +246,6 @@
 		46F778BB2449A89C006C4ED4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				46F778CE2449B90F006C4ED4 /* GenericListView */,
 				467AE99C2449D77C0004CDD4 /* IOSTHomeFactListTableVIewCell */,
 				46F7788E2449A6B8006C4ED4 /* LaunchScreen.storyboard */,
 			);
@@ -273,16 +283,18 @@
 			isa = PBXGroup;
 			children = (
 				46F778CB2449B8FC006C4ED4 /* IOSTHomeViewController.swift */,
+				467AE9A5244A237A0004CDD4 /* IOSTHomeViewProtocols.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
 		};
-		46F778CE2449B90F006C4ED4 /* GenericListView */ = {
+		46F778CE2449B90F006C4ED4 /* FaqList */ = {
 			isa = PBXGroup;
 			children = (
-				467AE99A2449D5010004CDD4 /* IOSTGenericTableViewController.swift */,
+				467AE99A2449D5010004CDD4 /* IOSTFactsListTableViewController.swift */,
+				467AE9A7244A23BF0004CDD4 /* IOSTFactsListProtocols.swift */,
 			);
-			path = GenericListView;
+			path = FaqList;
 			sourceTree = "<group>";
 		};
 		46F778D12449BA44006C4ED4 /* NavigationController */ = {
@@ -573,12 +585,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				46F778CA2449B702006C4ED4 /* NetworkReachabilityProtocols.swift in Sources */,
+				467AE9A22449F4DC0004CDD4 /* MasonryHelper.swift in Sources */,
 				46F778C22449B371006C4ED4 /* NetworkManager.swift in Sources */,
-				467AE99B2449D5010004CDD4 /* IOSTGenericTableViewController.swift in Sources */,
+				467AE9A6244A237A0004CDD4 /* IOSTHomeViewProtocols.swift in Sources */,
+				467AE99B2449D5010004CDD4 /* IOSTFactsListTableViewController.swift in Sources */,
 				467AE99E2449D7A80004CDD4 /* IOSTHomeListTableViewCell.swift in Sources */,
 				46F778D32449BA71006C4ED4 /* IOSTNavigationController.swift in Sources */,
 				467AE9A02449DC910004CDD4 /* FactsModel.swift in Sources */,
+				467AE9A8244A23BF0004CDD4 /* IOSTFactsListProtocols.swift in Sources */,
 				46F778842449A6B6006C4ED4 /* AppDelegate.swift in Sources */,
+				467AE9A4244A0CBE0004CDD4 /* ImageViewExtension.swift in Sources */,
 				46F778C62449B4A6006C4ED4 /* NetworkManagerProtocols.swift in Sources */,
 				46F778BF2449B235006C4ED4 /* Environment.swift in Sources */,
 				46F778C42449B392006C4ED4 /* NetworkReachabiliryManager.swift in Sources */,
