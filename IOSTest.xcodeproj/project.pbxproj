@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		110B2512961F4E3A1AA10937 /* Pods_IOSTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CDAAFCA668F10B81F5A3935 /* Pods_IOSTestTests.framework */; };
+		467AE99B2449D5010004CDD4 /* IOSTGenericTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467AE99A2449D5010004CDD4 /* IOSTGenericTableViewController.swift */; };
+		467AE99E2449D7A80004CDD4 /* IOSTHomeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467AE99D2449D7A80004CDD4 /* IOSTHomeListTableViewCell.swift */; };
+		467AE9A02449DC910004CDD4 /* FactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467AE99F2449DC910004CDD4 /* FactsModel.swift */; };
 		46F778842449A6B6006C4ED4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F778832449A6B6006C4ED4 /* AppDelegate.swift */; };
 		46F778862449A6B6006C4ED4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F778852449A6B6006C4ED4 /* SceneDelegate.swift */; };
 		46F7788D2449A6B8006C4ED4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46F7788C2449A6B8006C4ED4 /* Assets.xcassets */; };
@@ -19,6 +22,8 @@
 		46F778C42449B392006C4ED4 /* NetworkReachabiliryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F778C32449B392006C4ED4 /* NetworkReachabiliryManager.swift */; };
 		46F778C62449B4A6006C4ED4 /* NetworkManagerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F778C52449B4A6006C4ED4 /* NetworkManagerProtocols.swift */; };
 		46F778CA2449B702006C4ED4 /* NetworkReachabilityProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F778C92449B702006C4ED4 /* NetworkReachabilityProtocols.swift */; };
+		46F778CC2449B8FC006C4ED4 /* IOSTHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F778CB2449B8FC006C4ED4 /* IOSTHomeViewController.swift */; };
+		46F778D32449BA71006C4ED4 /* IOSTNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F778D22449BA71006C4ED4 /* IOSTNavigationController.swift */; };
 		7C5206FF42D26012C451264F /* Pods_IOSTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAAD2801F90118A85A039459 /* Pods_IOSTest.framework */; };
 		90E328F7AB94D0C2905B5FA3 /* Pods_IOSTest_IOSTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83D5ECEE952405857A2AF36A /* Pods_IOSTest_IOSTestUITests.framework */; };
 /* End PBXBuildFile section */
@@ -42,6 +47,9 @@
 
 /* Begin PBXFileReference section */
 		31C4CE56627D0F25C075287A /* Pods-IOSTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSTest.release.xcconfig"; path = "Target Support Files/Pods-IOSTest/Pods-IOSTest.release.xcconfig"; sourceTree = "<group>"; };
+		467AE99A2449D5010004CDD4 /* IOSTGenericTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSTGenericTableViewController.swift; sourceTree = "<group>"; };
+		467AE99D2449D7A80004CDD4 /* IOSTHomeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSTHomeListTableViewCell.swift; sourceTree = "<group>"; };
+		467AE99F2449DC910004CDD4 /* FactsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsModel.swift; sourceTree = "<group>"; };
 		46F778802449A6B6006C4ED4 /* IOSTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46F778832449A6B6006C4ED4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46F778852449A6B6006C4ED4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +69,8 @@
 		46F778C32449B392006C4ED4 /* NetworkReachabiliryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachabiliryManager.swift; sourceTree = "<group>"; };
 		46F778C52449B4A6006C4ED4 /* NetworkManagerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerProtocols.swift; sourceTree = "<group>"; };
 		46F778C92449B702006C4ED4 /* NetworkReachabilityProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityProtocols.swift; sourceTree = "<group>"; };
+		46F778CB2449B8FC006C4ED4 /* IOSTHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSTHomeViewController.swift; sourceTree = "<group>"; };
+		46F778D22449BA71006C4ED4 /* IOSTNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSTNavigationController.swift; sourceTree = "<group>"; };
 		4CDAAFCA668F10B81F5A3935 /* Pods_IOSTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOSTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D9C25FDAD28DC6948F342D4 /* Pods-IOSTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSTestTests.release.xcconfig"; path = "Target Support Files/Pods-IOSTestTests/Pods-IOSTestTests.release.xcconfig"; sourceTree = "<group>"; };
 		6B4AC852D5BBA08C30EEAFB6 /* Pods-IOSTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSTest.debug.xcconfig"; path = "Target Support Files/Pods-IOSTest/Pods-IOSTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +109,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		467AE99C2449D77C0004CDD4 /* IOSTHomeFactListTableVIewCell */ = {
+			isa = PBXGroup;
+			children = (
+				467AE99D2449D7A80004CDD4 /* IOSTHomeListTableViewCell.swift */,
+			);
+			path = IOSTHomeFactListTableVIewCell;
+			sourceTree = "<group>";
+		};
 		46F778772449A6B6006C4ED4 = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +178,7 @@
 		46F778B32449A703006C4ED4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				467AE99F2449DC910004CDD4 /* FactsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -174,6 +193,8 @@
 		46F778B52449A710006C4ED4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				46F778D12449BA44006C4ED4 /* NavigationController */,
+				46F778CD2449B905006C4ED4 /* Home */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -214,6 +235,8 @@
 		46F778BB2449A89C006C4ED4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				46F778CE2449B90F006C4ED4 /* GenericListView */,
+				467AE99C2449D77C0004CDD4 /* IOSTHomeFactListTableVIewCell */,
 				46F7788E2449A6B8006C4ED4 /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -244,6 +267,30 @@
 				46F778C32449B392006C4ED4 /* NetworkReachabiliryManager.swift */,
 			);
 			path = Reachability;
+			sourceTree = "<group>";
+		};
+		46F778CD2449B905006C4ED4 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				46F778CB2449B8FC006C4ED4 /* IOSTHomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		46F778CE2449B90F006C4ED4 /* GenericListView */ = {
+			isa = PBXGroup;
+			children = (
+				467AE99A2449D5010004CDD4 /* IOSTGenericTableViewController.swift */,
+			);
+			path = GenericListView;
+			sourceTree = "<group>";
+		};
+		46F778D12449BA44006C4ED4 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				46F778D22449BA71006C4ED4 /* IOSTNavigationController.swift */,
+			);
+			path = NavigationController;
 			sourceTree = "<group>";
 		};
 		67564ED8B085A0825729EA0C /* Frameworks */ = {
@@ -527,10 +574,15 @@
 			files = (
 				46F778CA2449B702006C4ED4 /* NetworkReachabilityProtocols.swift in Sources */,
 				46F778C22449B371006C4ED4 /* NetworkManager.swift in Sources */,
+				467AE99B2449D5010004CDD4 /* IOSTGenericTableViewController.swift in Sources */,
+				467AE99E2449D7A80004CDD4 /* IOSTHomeListTableViewCell.swift in Sources */,
+				46F778D32449BA71006C4ED4 /* IOSTNavigationController.swift in Sources */,
+				467AE9A02449DC910004CDD4 /* FactsModel.swift in Sources */,
 				46F778842449A6B6006C4ED4 /* AppDelegate.swift in Sources */,
 				46F778C62449B4A6006C4ED4 /* NetworkManagerProtocols.swift in Sources */,
 				46F778BF2449B235006C4ED4 /* Environment.swift in Sources */,
 				46F778C42449B392006C4ED4 /* NetworkReachabiliryManager.swift in Sources */,
+				46F778CC2449B8FC006C4ED4 /* IOSTHomeViewController.swift in Sources */,
 				46F778862449A6B6006C4ED4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -628,7 +680,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -682,7 +734,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
