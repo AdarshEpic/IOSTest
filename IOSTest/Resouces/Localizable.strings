@@ -1,0 +1,13 @@
+/*
+  Localizable.strings
+  IOSTest
+
+  Created by Adarsh Manoharan on 18/04/2 R.
+  Copyright © 2 Adarsh Manoharan. All rights reserved.
+*/
+///Errors
+
+"ReachabilityError" = "Network not reachable. Please try again later";
+"getingContentError" = "Error while requesting to server";
+"loadingContents" = "Loading...";
+

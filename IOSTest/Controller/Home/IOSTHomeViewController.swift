@@ -28,7 +28,6 @@ class IOSTHomeViewController: UIViewController, IOSTHomeViewProtocol {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.title = ""
-        KSToastView.ks_showToast("Loading data.....")
     }
     
 }

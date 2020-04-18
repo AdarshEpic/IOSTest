@@ -7,30 +7,23 @@
 //
 
 import UIKit
-import Kingfisher
+import SDWebImage
 
 extension UIImageView {
     //load from url
-    func loadImageFromUrl(string: String) {
-        let url = URL(string: string)
-        self.kf.setImage(with: url)
-    }
-    //download from url with completion
-    func downloadImage(`with` urlString: String, completion: @escaping(UIImage?) -> Void) {
+    func loadImage(`with` urlString: String, completion: @escaping(UIImage?) -> Void) {
         guard let url = URL.init(string: urlString) else {
             return
-        }
-        let resource = ImageResource(downloadURL: url)
-
-        KingfisherManager.shared.retrieveImage(with: resource, options: nil, progressBlock: nil) { result in
-            switch result {
-            case .success(let value):
-                print("Image: \(value.image). Got from: \(value.cacheType)")
-                completion(value.image)
-            case .failure(let error):
-                print("Error: \(error)")
-                completion(nil)
-            }
-        }
+        }        
+        self.sd_setImage(with: url, placeholderImage: UIImage(named: "placeholder"),
+                         options: SDWebImageOptions(rawValue: 0), completed: { image, error, _, _ in
+                            guard error == nil else {
+                                self.sd_cancelCurrentImageLoad()
+                                print(error?.localizedDescription ?? "")
+                                return
+                            }
+                            completion(image)
+                            
+        })
     }
 }

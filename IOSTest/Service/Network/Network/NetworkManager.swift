@@ -13,65 +13,79 @@ class NetworkManager<T: Decodable>: NSObject, NetworkManagerProtocol {
     var completionBlock: RequestCompletion!
     var requestMethod: HTTPMethod!
     var requestUrl: String!
+    var formatterRequired: Bool = false
     
     // MARK: Setup Root
     func setupRoot() -> URL {
-        let finalRequestString = Environment.rootURL + Environment.apiKey + requestUrl
+        let finalRequestString = Environment.rootURL + Environment.apiKey + "/" + requestUrl
         return URL(string: finalRequestString)!
         
     }
     // MARK: Request
-    func perform<M: Encodable>(params: M?, completion: @escaping RequestCompletion) {
+    func perform<M: Encodable>(params: M? = nil, completion: @escaping RequestCompletion) {
         let url = setupRoot()
         var request: URLRequest = URLRequest(url: url)
         request.httpMethod = requestMethod.rawValue
-        
         NetworkReachabilityManager.isReachable { (status) in
             if status {
-                
-            }
-        }
-        //geting post body
-        do {
-            let jsonBody = try JSONEncoder().encode(params)
-            request.httpBody = jsonBody
-        } catch let error {
-            print("httpBodyError: ", error.localizedDescription)
-        }
-        //create data task
-        let dataTask = URLSession.shared.dataTask(with: request) { data, _, err  in
-            
-            guard err == nil else {
-                completion(.failure, nil)
-                print("reqeust error: ", err?.localizedDescription ?? "")
-                return
-            }
-            
-            guard data != nil else {
-                print("Error in getting data")
-                return
-            }
-            do {
-                let decodedResult = try JSONDecoder().decode(T.self, from: data!)
-                print("responseFromServer:", decodedResult)
-                //invoke the completion handler on the main thread
-                DispatchQueue.main.async {
-                    
+                //geting post body
+                if self.requestMethod != HTTPMethod.get {
+                    let jsonBody = try? JSONEncoder().encode(params)
+                    request.httpBody = jsonBody
                 }
-            } catch let error as NSError {
-                print(error.localizedDescription)
+                //create data task
+                let dataTask = URLSession.shared.dataTask(with: request) { data, _, err  in
+                    
+                    guard err == nil else {
+                        completion(.failure, err?.localizedDescription ?? "")
+                        print("reqeust error: ", err?.localizedDescription ?? "")
+                        return
+                    }
+                    guard data != nil else {
+                        print("Error in getting data")
+                        DispatchQueue.main.async {
+                            completion(.failure, NSLocalizedString("getingContentError", comment: ""))
+                        }
+                        return
+                    }
+                    do {
+                        //RESPONSE FORMATTER
+                        var responseDataModified = data
+                        if self.formatterRequired {
+                            let responseStrInISOLatin = String(data: data!,
+                                                               encoding: String.Encoding.isoLatin1)
+                            guard let modifiedDataInUTF8Format =
+                                responseStrInISOLatin?.data(using: String.Encoding.utf8) else {
+                                    print("could not convert data to UTF-8 format")
+                                    return
+                            }
+                            responseDataModified = modifiedDataInUTF8Format
+                        }
+                        let decodedResult = try JSONDecoder().decode(T.self, from: responseDataModified!)
+                        print("responseFromServer:", decodedResult)
+                        DispatchQueue.main.async {
+                            completion(.success, decodedResult)
+                        }
+                    } catch let error as NSError {
+                        print(error.localizedDescription)
+                        DispatchQueue.main.async {
+                            completion(.failure, error.localizedDescription)
+                        }
+                    }
+                }
+                dataTask.resume()
+            } else {
+                completion(.networkIssue, NSLocalizedString("ReachabilityError", comment: ""))
             }
-            
         }
-        dataTask.resume()
     }
+    
 }
 
 //SERVICE STATUS
 enum APIResultStatus {
     case success
     case failure
-    case tokenIssue
     case networkIssue
 }
 //REST Methods

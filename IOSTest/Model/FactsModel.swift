@@ -9,13 +9,23 @@
 import Foundation
 
 struct FactsModel: Decodable {
-    var title: String?
-    var image: String?
-    var descriptionFeature: String?
+    let viewTitle: String?
+    let listData: [FactsList]?
     
-    init(title: String?, image: String?, descriptionFeature: String) {
-        self.title = title
-        self.image = image
-        self.descriptionFeature = descriptionFeature
+    enum CodingKeys: String, CodingKey {
+        case viewTitle = "title"
+        case listData = "rows"
+    }
+}
+
+// MARK: - FactsList
+struct FactsList: Decodable {
+    let title, rowDescription: String?
+    let imageHref: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case title
+        case rowDescription = "description"
+        case imageHref
     }
 }
