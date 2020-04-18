@@ -11,11 +11,11 @@ import Foundation
 struct FactsModel: Decodable {
     var title: String?
     var image: String?
-    var description: String?
+    var descriptionFeature: String?
     
-    init(title: String?, image: String?, description: String) {
+    init(title: String?, image: String?, descriptionFeature: String) {
         self.title = title
         self.image = image
-        self.description = image
+        self.descriptionFeature = descriptionFeature
     }
 }

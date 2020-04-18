@@ -15,7 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+        if iOS_VERSION_LESS_THAN(version: "13.0") {
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            let navigationController = IOSTNavigationController(rootViewController: IOSTHomeViewController())
+            window?.rootViewController = navigationController
+            window?.makeKeyAndVisible()
+        }
+
         return true
     }
 
@@ -33,5 +39,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
         // Called when the user discards a scene session.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+    func iOS_VERSION_LESS_THAN(version: String) -> Bool {
+        return UIDevice.current.systemVersion.compare(version, options:
+            NSString.CompareOptions.numeric) == ComparisonResult.orderedAscending
     }
 }

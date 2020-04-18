@@ -8,56 +8,42 @@
 
 import UIKit
 
-class IOSTFactsListTableViewController: UITableViewController {
+final class IOSTFactsListTableViewController: IOSTGenericTableViewController<FactsModel, IOSTHomeListTableViewCell>,
+                                        IOSFactsTableViewProtocols {
     // ui model
-    var items = [FactsModel]()
-    
-    var didSetTitle: ((_ title: String) -> Void)?
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not implimented")
+    internal var factItems: [FactsModel] = [] {
+        didSet {
+            self.items = factItems
+        }
     }
     
-    init() {
-        super.init(style: .plain)
-        self.tableView.register(IOSTHomeListTableViewCell.self, forCellReuseIdentifier: "Cell")
-        self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = 100
-    }
+    var didSetTitle: ((_ title: String) -> Void)? // title setup listener
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addRefreshController() // adding refresh controller
     }
-    
-    // MARK: - Table view data source
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+    // from parent class: refreshing task
+    override func refreshData(_ sender: UIRefreshControl) {
+        print("refreshing data")
+        self.refreshControl?.endRefreshing()
+        self.tableView.reloadData()
     }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return items.count
+    // from parent class: configure cell when its created
+    override func configureAtCellLoading(cell: IOSTHomeListTableViewCell) {
+        cell.updateLayoutDelegate = self
     }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "Cell",
-                                                    for: indexPath) as? IOSTHomeListTableViewCell {
-            cell.dataFacts = items[indexPath.row]
-            cell.updateLayoutDelegate = self
-            return cell
+    // this will be triggered when orientation is taking place
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        let animationHandler: ((UIViewControllerTransitionCoordinatorContext) -> Void) = { _ in
+            // This block will be called several times during rotation,
+            // so if you want your tableView change more smooth reload it here too.
         }
-        return UITableViewCell()
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        let completionHandler: ((UIViewControllerTransitionCoordinatorContext) -> Void) = { [weak self] (context) in
+            // This block will be called when rotation will be completed
+            self?.tableView.reloadData()
+        }
+        coordinator.animate(alongsideTransition: animationHandler, completion: completionHandler)
     }
 }
 // MARK: Update after loading image

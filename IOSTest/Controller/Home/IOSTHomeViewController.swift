@@ -8,11 +8,16 @@
 
 import UIKit
 import Masonry
+import KSToastView
+protocol IOSTHomeViewProtocol {
+    var contanerView: UIView! { get set }
+    var factsListViewController: IOSTFactsListTableViewController! { get set }
+}
 
-class IOSTHomeViewController: UIViewController {
+class IOSTHomeViewController: UIViewController, IOSTHomeViewProtocol {
     // properties
-    private var contanerView: UIView!
-    private var factsListViewController: IOSTFactsListTableViewController!
+    internal var contanerView: UIView!
+    internal var factsListViewController: IOSTFactsListTableViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +28,7 @@ class IOSTHomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.title = ""
+        KSToastView.ks_showToast("Loading data.....")
     }
     
 }

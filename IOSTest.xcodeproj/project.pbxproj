@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		110B2512961F4E3A1AA10937 /* Pods_IOSTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CDAAFCA668F10B81F5A3935 /* Pods_IOSTestTests.framework */; };
+		4603F870244A829F002A035F /* IOSTGenericTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4603F86F244A829F002A035F /* IOSTGenericTableViewController.swift */; };
+		4603F873244A8356002A035F /* IOSTGenericTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4603F872244A8356002A035F /* IOSTGenericTableViewCell.swift */; };
 		467AE99B2449D5010004CDD4 /* IOSTFactsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467AE99A2449D5010004CDD4 /* IOSTFactsListTableViewController.swift */; };
 		467AE99E2449D7A80004CDD4 /* IOSTHomeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467AE99D2449D7A80004CDD4 /* IOSTHomeListTableViewCell.swift */; };
 		467AE9A02449DC910004CDD4 /* FactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467AE99F2449DC910004CDD4 /* FactsModel.swift */; };
@@ -51,6 +53,8 @@
 
 /* Begin PBXFileReference section */
 		31C4CE56627D0F25C075287A /* Pods-IOSTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSTest.release.xcconfig"; path = "Target Support Files/Pods-IOSTest/Pods-IOSTest.release.xcconfig"; sourceTree = "<group>"; };
+		4603F86F244A829F002A035F /* IOSTGenericTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSTGenericTableViewController.swift; sourceTree = "<group>"; };
+		4603F872244A8356002A035F /* IOSTGenericTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSTGenericTableViewCell.swift; sourceTree = "<group>"; };
 		467AE99A2449D5010004CDD4 /* IOSTFactsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSTFactsListTableViewController.swift; sourceTree = "<group>"; };
 		467AE99D2449D7A80004CDD4 /* IOSTHomeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSTHomeListTableViewCell.swift; sourceTree = "<group>"; };
 		467AE99F2449DC910004CDD4 /* FactsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsModel.swift; sourceTree = "<group>"; };
@@ -117,6 +121,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4603F86E244A8271002A035F /* GenericTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4603F86F244A829F002A035F /* IOSTGenericTableViewController.swift */,
+			);
+			path = GenericTableViewController;
+			sourceTree = "<group>";
+		};
+		4603F871244A8335002A035F /* GenericTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4603F872244A8356002A035F /* IOSTGenericTableViewCell.swift */,
+			);
+			path = GenericTableViewCell;
+			sourceTree = "<group>";
+		};
 		467AE99C2449D77C0004CDD4 /* IOSTHomeFactListTableVIewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +266,8 @@
 		46F778BB2449A89C006C4ED4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4603F871244A8335002A035F /* GenericTableViewCell */,
+				4603F86E244A8271002A035F /* GenericTableViewController */,
 				467AE99C2449D77C0004CDD4 /* IOSTHomeFactListTableVIewCell */,
 				46F7788E2449A6B8006C4ED4 /* LaunchScreen.storyboard */,
 			);
@@ -584,6 +606,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4603F873244A8356002A035F /* IOSTGenericTableViewCell.swift in Sources */,
 				46F778CA2449B702006C4ED4 /* NetworkReachabilityProtocols.swift in Sources */,
 				467AE9A22449F4DC0004CDD4 /* MasonryHelper.swift in Sources */,
 				46F778C22449B371006C4ED4 /* NetworkManager.swift in Sources */,
@@ -599,6 +622,7 @@
 				46F778BF2449B235006C4ED4 /* Environment.swift in Sources */,
 				46F778C42449B392006C4ED4 /* NetworkReachabiliryManager.swift in Sources */,
 				46F778CC2449B8FC006C4ED4 /* IOSTHomeViewController.swift in Sources */,
+				4603F870244A829F002A035F /* IOSTGenericTableViewController.swift in Sources */,
 				46F778862449A6B6006C4ED4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -696,7 +720,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -750,7 +774,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

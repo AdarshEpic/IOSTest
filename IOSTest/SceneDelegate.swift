@@ -15,9 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     @available(iOS 13.0, *)
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-            appDelegate.window = window
-        }
+       
         //initialization
         guard let windowScene = (scene as? UIWindowScene) else { return }
         //windo initialization
@@ -27,6 +25,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navigationController = IOSTNavigationController(rootViewController: IOSTHomeViewController())
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+        // Configure App Delegate
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            appDelegate.window = window
+        }
     }
 
     @available(iOS 13.0, *)

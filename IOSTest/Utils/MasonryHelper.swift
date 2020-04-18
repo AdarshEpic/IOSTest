@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Masonry
 
 class MasonryHelper {
     // MARK: Constraint with parent view
@@ -72,7 +73,6 @@ enum ViewConstraints {
     case right
     case top
     case bottom
-   
     case leftMargin
     case topMargin
     case bottomMargin
