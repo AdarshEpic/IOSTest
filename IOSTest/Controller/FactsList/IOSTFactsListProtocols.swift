@@ -14,6 +14,6 @@ protocol IOSTHomeCellLayoutUpdateProtocol: class {
 
 //IOSFactView Protocol
 protocol IOSFactsTableViewProtocols {
-    var factItems: FactsModel? { get set }
     var didSetTitle: ((_ title: String) -> Void)? { get set }
+    var viewModel: IOSTFactsViewModel! { get }
 }

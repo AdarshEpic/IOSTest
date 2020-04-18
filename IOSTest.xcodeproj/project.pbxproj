@@ -15,6 +15,7 @@
 		4603F884244AC7A9002A035F /* ApiPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4603F883244AC7A9002A035F /* ApiPath.swift */; };
 		4603F886244ACFD7002A035F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4603F885244ACFD7002A035F /* Localizable.strings */; };
 		4603F88A244AD201002A035F /* EmptyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4603F889244AD201002A035F /* EmptyRequest.swift */; };
+		4603F89A244B2130002A035F /* IOSTFactsListTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4603F899244B2130002A035F /* IOSTFactsListTableViewControllerTests.swift */; };
 		467AE99B2449D5010004CDD4 /* IOSTFactsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467AE99A2449D5010004CDD4 /* IOSTFactsListTableViewController.swift */; };
 		467AE99E2449D7A80004CDD4 /* IOSTHomeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467AE99D2449D7A80004CDD4 /* IOSTHomeListTableViewCell.swift */; };
 		467AE9A02449DC910004CDD4 /* FactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467AE99F2449DC910004CDD4 /* FactsModel.swift */; };
@@ -65,6 +66,7 @@
 		4603F883244AC7A9002A035F /* ApiPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiPath.swift; sourceTree = "<group>"; };
 		4603F885244ACFD7002A035F /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		4603F889244AD201002A035F /* EmptyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyRequest.swift; sourceTree = "<group>"; };
+		4603F899244B2130002A035F /* IOSTFactsListTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSTFactsListTableViewControllerTests.swift; sourceTree = "<group>"; };
 		467AE99A2449D5010004CDD4 /* IOSTFactsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSTFactsListTableViewController.swift; sourceTree = "<group>"; };
 		467AE99D2449D7A80004CDD4 /* IOSTHomeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSTHomeListTableViewCell.swift; sourceTree = "<group>"; };
 		467AE99F2449DC910004CDD4 /* FactsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsModel.swift; sourceTree = "<group>"; };
@@ -232,8 +234,9 @@
 		46F778A42449A6B8006C4ED4 /* IOSTestUITests */ = {
 			isa = PBXGroup;
 			children = (
-				46F778A52449A6B8006C4ED4 /* IOSTestUITests.swift */,
 				46F778A72449A6B8006C4ED4 /* Info.plist */,
+				46F778A52449A6B8006C4ED4 /* IOSTestUITests.swift */,
+				4603F899244B2130002A035F /* IOSTFactsListTableViewControllerTests.swift */,
 			);
 			path = IOSTestUITests;
 			sourceTree = "<group>";
@@ -683,6 +686,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4603F89A244B2130002A035F /* IOSTFactsListTableViewControllerTests.swift in Sources */,
 				46F778A62449A6B8006C4ED4 /* IOSTestUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

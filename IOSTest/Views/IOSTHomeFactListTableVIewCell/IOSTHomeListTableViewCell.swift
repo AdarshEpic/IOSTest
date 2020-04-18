@@ -53,18 +53,26 @@ final class IOSTHomeListTableViewCell: IOSTGenericTableViewCell<FactsList>, IOST
     private lazy var featureTitleLabel: UILabel = {
         let lbl = UILabel()
         lbl.numberOfLines = 0
+        lbl.isAccessibilityElement = true
+        lbl.accessibilityIdentifier = "factTitle"
         lbl.font = UIFont.boldSystemFont(ofSize: 18)
         return lbl
     }()
     // image view
     private lazy var featureImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.layer.cornerRadius = 5
+        imageView.isAccessibilityElement = true
+        imageView.accessibilityIdentifier = "factImageView"
+        imageView.clipsToBounds = true
         return imageView
     }()
     // description label
     private lazy var featureDescriptionLabel: UILabel = {
         let lbl = UILabel()
         lbl.numberOfLines = 0
+        lbl.isAccessibilityElement = true
+        lbl.accessibilityIdentifier = "factDescription"
         lbl.font = UIFont().withSize(14)
         return lbl
     }()

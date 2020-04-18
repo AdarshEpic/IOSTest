@@ -26,6 +26,8 @@ final class IOSTFactsListTableViewController: IOSTGenericTableViewController<Fac
         super.viewDidLoad()
         self.addRefreshController() // adding refresh controller
         self.prepareViewModel()
+        self.setupView()
+       
     }
     
     // from parent class: refreshing task
@@ -34,6 +36,13 @@ final class IOSTFactsListTableViewController: IOSTGenericTableViewController<Fac
         self.refreshControl?.endRefreshing()
         viewModel.initiateRequest()
         self.tableView.reloadData()
+        
+    }
+    
+    private func setupView() {
+        tableView.isAccessibilityElement = true
+        tableView.accessibilityIdentifier = "factTableView"
+        self.tableView.allowsSelection = false
     }
     
     private func prepareViewModel() {
@@ -44,6 +53,10 @@ final class IOSTFactsListTableViewController: IOSTGenericTableViewController<Fac
     // from parent class: configure cell when its created
     override func configureAtCellLoading(cell: IOSTHomeListTableViewCell, indexPath: IndexPath) {
         cell.updateLayoutDelegate = self
+        //testable
+        cell.isAccessibilityElement = true
+        cell.accessibilityIdentifier = String(format: "factTVC_%d_%d",
+        indexPath.section, indexPath.row)
     }
     
     // this will be triggered when orientation is taking place
