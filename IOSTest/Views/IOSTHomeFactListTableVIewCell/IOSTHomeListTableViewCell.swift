@@ -9,10 +9,6 @@
 import UIKit
 import Masonry
 
-protocol IOSTHomeListCellViewProtocols {
-    var updateLayoutDelegate: IOSTHomeCellLayoutUpdateProtocol? { get }
-}
-
 final class IOSTHomeListTableViewCell: IOSTGenericTableViewCell<FactsList>, IOSTHomeListCellViewProtocols {
     //load view protocol
     weak var updateLayoutDelegate: IOSTHomeCellLayoutUpdateProtocol?

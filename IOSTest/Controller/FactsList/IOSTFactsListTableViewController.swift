@@ -19,7 +19,8 @@ final class IOSTFactsListTableViewController: IOSTGenericTableViewController<Fac
         }
     }
     
-    public var viewModel: IOSTFactsViewModel!
+    public var viewModel: IOSTFactsViewModelProtocol!
+    
     var didSetTitle: ((_ title: String) -> Void)? // title setup listener
     
     override func viewDidLoad() {
@@ -48,7 +49,6 @@ final class IOSTFactsListTableViewController: IOSTGenericTableViewController<Fac
     private func prepareViewModel() {
         viewModel = IOSTFactsViewModel()
         viewModel.datasource = self
-        viewModel.initiateRequest()
     }
     // from parent class: configure cell when its created
     override func configureAtCellLoading(cell: IOSTHomeListTableViewCell, indexPath: IndexPath) {

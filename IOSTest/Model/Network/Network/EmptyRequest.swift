@@ -1,5 +1,5 @@
 //
-//  ApiPath.swift
+//  EmptyRequest.swift
 //  IOSTest
 //
 //  Created by Adarsh Manoharan on 18/04/2 R.
@@ -8,6 +8,7 @@
 
 import Foundation
 
-class ApiPath {
-    static let facts = "facts.json"
+//Use When no request body needed
+struct EmptyRequest: Encodable {
+    
 }

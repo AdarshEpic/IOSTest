@@ -11,9 +11,13 @@ import Foundation
 protocol IOSTHomeCellLayoutUpdateProtocol: class {
     func updateCell(cell: IOSTHomeListTableViewCell)
 }
+// should be available this. this does the updates over layouts, facts tableviewcell
+protocol IOSTHomeListCellViewProtocols {
+    var updateLayoutDelegate: IOSTHomeCellLayoutUpdateProtocol? { get }
+}
 
 //IOSFactView Protocol
 protocol IOSFactsTableViewProtocols {
     var didSetTitle: ((_ title: String) -> Void)? { get set }
-    var viewModel: IOSTFactsViewModel! { get }
+    var viewModel: IOSTFactsViewModelProtocol! { get }
 }
