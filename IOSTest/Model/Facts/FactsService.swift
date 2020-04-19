@@ -10,7 +10,7 @@ import Foundation
 
 final class FactsService: NetworkManager <FactsModel> {
     func request(completion: @escaping RequestCompletion) {
-        requestUrl = ApiPath.factsApi
+        requestUrl = ApiPath.facts
         requestMethod = .get
         formatterRequired = true
         super.perform(params: EmptyRequest(), completion: completion)

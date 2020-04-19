@@ -7,9 +7,10 @@
 //
 
 import Foundation
-
+import Reachability
+typealias RequestCompletion = (_ error: APIResultStatus?, _ data: Any?) -> Void
 class NetworkManager<T: Decodable>: NSObject, NetworkManagerProtocol {
-    typealias RequestCompletion = (_ error: APIResultStatus?, _ data: Any?) -> Void
+   
     var completionBlock: RequestCompletion!
     var requestMethod: HTTPMethod!
     var requestUrl: String!

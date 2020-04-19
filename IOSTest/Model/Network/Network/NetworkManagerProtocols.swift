@@ -7,10 +7,11 @@
 //
 
 import Foundation
+
 protocol NetworkManagerProtocol {
     associatedtype RequestCompletion = (_ error: APIResultStatus?, _ data: Any?) -> Void
     var requestMethod: HTTPMethod! { get set }
     var requestUrl: String! { get set }
-    func setupRoot() -> URL
+    var formatterRequired: Bool { get set }
     func perform<M: Encodable>(params: M?, completion: RequestCompletion)
 }

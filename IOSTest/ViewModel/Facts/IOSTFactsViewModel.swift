@@ -6,27 +6,20 @@
 //  Copyright © 2 Adarsh Manoharan. All rights reserved.
 //
 
-protocol IOSTFactsViewModelProtocol {
-    
-}
-
-protocol IOSTFactsViewModelDataSource: class {
-    func didReceivedData(response: FactsModel?, message: String?)
-}
-
 import Foundation
 
-class IOSTFactsViewModel: NSObject {
+class IOSTFactsViewModel: NSObject, IOSTFactsViewModelProtocol {
     
-    private var factsService: FactsService!
     public weak var datasource: IOSTFactsViewModelDataSource?
     
     override init() {
-        self.factsService = FactsService()
+        super.init()
+        self.initiateRequest()
     }
     
     public func initiateRequest() {
-        self.factsService.request { [weak self] (status, response) in
+     
+        FactsService().request { [weak self] (status, response) in
             guard let strongSelf = self else { return }
             
             switch status {
