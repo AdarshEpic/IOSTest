@@ -69,7 +69,7 @@ final class IOSTHomeListTableViewCell: IOSTGenericTableViewCell<FactsList>, IOST
         lbl.numberOfLines = 0
         lbl.isAccessibilityElement = true
         lbl.accessibilityIdentifier = "factDescription"
-        lbl.font = UIFont().withSize(14)
+        lbl.font = UIFont.systemFont(ofSize: 14)
         return lbl
     }()
     // initialization
