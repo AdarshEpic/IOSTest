@@ -10,7 +10,7 @@ target 'IOSTest' do
   # Style Formatter Framework
   pod 'SwiftLint', '0.39.2'
   # Image Loader
-  pod 'SDWebImage', '~> 5.0'
+  pod 'SDWebImage', '5.0'
   # Reachabily Framework
   pod 'ReachabilitySwift'
   # Toast
