@@ -14,7 +14,6 @@ class IOSTFactsViewModel: NSObject, IOSTFactsViewModelProtocol {
     
     override init() {
         super.init()
-        self.initiateRequest()
     }
     
     public func initiateRequest() {

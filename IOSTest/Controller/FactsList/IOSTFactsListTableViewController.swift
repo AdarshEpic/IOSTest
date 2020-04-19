@@ -49,6 +49,7 @@ final class IOSTFactsListTableViewController: IOSTGenericTableViewController<Fac
     private func prepareViewModel() {
         viewModel = IOSTFactsViewModel()
         viewModel.datasource = self
+        viewModel.initiateRequest()
     }
     // from parent class: configure cell when its created
     override func configureAtCellLoading(cell: IOSTHomeListTableViewCell, indexPath: IndexPath) {
@@ -91,9 +92,16 @@ extension IOSTFactsListTableViewController: IOSTHomeCellLayoutUpdateProtocol {
 extension IOSTFactsListTableViewController: IOSTFactsViewModelDataSource {
     func didReceivedData(response: FactsModel?, message: String?) {
         KSToastView.ks_showToast(message)
-        self.factItems = response
-        self.didSetTitle?((response?.viewTitle)!)
-        self.tableView.reloadData()
+        if response != nil {
+            self.factItems = response
+            if let viewTitle = response?.viewTitle {
+                self.didSetTitle?(viewTitle)
+            }
+            self.tableView.reloadData()
+        } else {
+            self.didSetTitle?(message ?? "")
+        }
+        
     }
     
 }
