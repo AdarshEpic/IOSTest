@@ -21,10 +21,12 @@ target 'IOSTest' do
   target 'IOSTestTests' do
     inherit! :search_paths
     # Pods for testing
+     pod 'SDWebImage', '5.0'
   end
 
   target 'IOSTestUITests' do
     # Pods for testing
+     pod 'SDWebImage', '5.0'
   end
 
 end

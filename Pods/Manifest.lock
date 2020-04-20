@@ -10,7 +10,7 @@ PODS:
 DEPENDENCIES:
   - KSToastView (= 0.5.7)
   - Masonry (= 1.1.0)
-  - ReachabilitySwift
+  - ReachabilitySwift (= 5.0.0)
   - SDWebImage (= 5.0)
   - SwiftLint (= 0.39.2)
 
@@ -29,6 +29,6 @@ SPEC CHECKSUMS:
   SDWebImage: 5de80a0302de9e377e62f47d2fa1304efff0e55f
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
 
-PODFILE CHECKSUM: 56261e4e741a6cbcafd1a2509d702323034658b3
+PODFILE CHECKSUM: c2f7d7623b75a07d61840d08c639c1ada7b6b585
 
 COCOAPODS: 1.9.1
