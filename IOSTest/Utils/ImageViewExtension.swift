@@ -14,7 +14,7 @@ extension UIImageView {
     func loadImage(`with` urlString: String, completion: @escaping(UIImage?) -> Void) {
         guard let url = URL.init(string: urlString) else {
             return
-        }        
+        }
         self.sd_setImage(with: url, placeholderImage: UIImage(named: "placeholder"),
                          options: SDWebImageOptions(rawValue: 0), completed: { image, error, _, _ in
                             guard error == nil else {
@@ -23,7 +23,6 @@ extension UIImageView {
                                 return
                             }
                             completion(image)
-                            
         })
     }
 }

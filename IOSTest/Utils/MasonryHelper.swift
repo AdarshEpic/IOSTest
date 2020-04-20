@@ -36,7 +36,6 @@ class MasonryHelper {
                 case .bottomToTop:
                     make?.top.equalTo()(parentView.mas_bottom)?.with()?.offset()(topBottomPadding)
                 }
-                
             }
         }
     }
@@ -53,7 +52,6 @@ class MasonryHelper {
             }
         }
     }
-    
     // MARK: Dimension for the view
     static func makeCenterTo(parentView: UIView, view: UIView, toViews: [ViewCenter], padding: CGFloat = 0) {
         view.mas_makeConstraints { (make) in

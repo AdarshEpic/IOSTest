@@ -11,10 +11,8 @@ import Foundation
 @testable import IOSTest
 
 final class FactServiceMock: FactsServiceProtocol {
-    
     var shouldReturnError = false
     var numberOfTimesGenerated = 0
-    
     func request(completion: @escaping (_ error: APIResultStatus?, _ data: Any?) -> Void) {
         numberOfTimesGenerated += numberOfTimesGenerated
         guard !shouldReturnError else {
@@ -23,7 +21,6 @@ final class FactServiceMock: FactsServiceProtocol {
         }
         completion(.success, FactListModelMock.getDummyData())
     }
-    
     func numberOfTimesCalled() -> Int {
         return numberOfTimesGenerated
     }

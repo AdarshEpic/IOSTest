@@ -11,16 +11,12 @@ import Foundation
 @testable import IOSTest
 
 final class IOSTFactsViewModelMock: IOSTFactsViewModelProtocol {
-    
     var datasource: IOSTFactsViewModelDataSource?
-    
     init() {
         self.initiateRequest()
     }
-    
     var shouldReturnError = false
     var numberOfTimesCalled = 0
-    
     func initiateRequest() {
         numberOfTimesCalled += 1
         if shouldReturnError {

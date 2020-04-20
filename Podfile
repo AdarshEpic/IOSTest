@@ -12,7 +12,7 @@ target 'IOSTest' do
   # Image Loader
   pod 'SDWebImage', '5.0'
   # Reachabily Framework
-  pod 'ReachabilitySwift'
+  pod 'ReachabilitySwift', '5.0.0'
   # Toast
   pod 'KSToastView', '0.5.7'
   

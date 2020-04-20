@@ -14,7 +14,6 @@ public enum Environment {
         static let rootURL = "ROOT_URL"
         static let apiKey = "API_KEY"
     }
-    
     // MARK: - Plist
     private static let infoDictionary: [String: Any] = {
         guard let dict = Bundle.main.infoDictionary else {
@@ -22,7 +21,6 @@ public enum Environment {
         }
         return dict
     }()
-    
     // MARK: - Plist values
     static let rootURL: String = {
         guard let rootURLstring = Environment.infoDictionary[Plist.rootURL] as? String else {
@@ -30,7 +28,6 @@ public enum Environment {
         }
         return rootURLstring
     }()
-    
     static let apiKey: String = {
         guard let apiKey = Environment.infoDictionary[Plist.apiKey] as? String else {
             fatalError("API Key not set in plist for this environment")

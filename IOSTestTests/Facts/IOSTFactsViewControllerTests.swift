@@ -11,7 +11,6 @@ import XCTest
 @testable import IOSTest
 
 class IOSTFactsViewControllerTests: XCTestCase {
-    
     var viewModel: IOSTFactsViewModelMock!
     var sut: IOSTFactsListTableViewController!
     var factsDataSource: IOSTFactViewModelDataSourceMock!
@@ -35,13 +34,11 @@ class IOSTFactsViewControllerTests: XCTestCase {
         viewModel.shouldReturnError = false // throw error
         viewModel.initiateRequest()
         XCTAssertTrue(self.factsDataSource.response == nil, self.factsDataSource.message ?? "")
-  
         viewModel.shouldReturnError = true // success
         viewModel.initiateRequest()
         XCTAssertTrue(self.factsDataSource.response.flatMap({ (item) in
             sut.factItems = item
         }) != nil, self.factsDataSource.message ?? "")
-        
         XCTAssertFalse(self.viewModel.numberOfTimesCalledInitializeRequest()
             != 3, "\(viewModel.numberOfTimesCalled) called the function")
     }

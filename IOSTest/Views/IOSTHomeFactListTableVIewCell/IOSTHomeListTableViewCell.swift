@@ -32,12 +32,10 @@ final class IOSTHomeListTableViewCell: IOSTGenericTableViewCell<FactsList>, IOST
         }
         self.featureDescriptionLabel.text = value?.rowDescription
     }
-    
     private func changeHeightOfImageView(height: CGFloat) {
         self.featureImageViewHeightConstraint?.equalTo()(height)
         self.updateLayoutDelegate?.updateCell(cell: self)
     }
-    
     //calculating height server image
     private func getCalculatedHeight(image: UIImage) -> CGFloat {
         let aspectRatio = image.size.width/image.size.height
@@ -45,7 +43,7 @@ final class IOSTHomeListTableViewCell: IOSTGenericTableViewCell<FactsList>, IOST
         print(requiredHeight)
         return requiredHeight
     }
-    // title label
+    // view cmponents
     private lazy var featureTitleLabel: UILabel = {
         let lbl = UILabel()
         lbl.numberOfLines = 0
@@ -54,7 +52,6 @@ final class IOSTHomeListTableViewCell: IOSTGenericTableViewCell<FactsList>, IOST
         lbl.font = UIFont.boldSystemFont(ofSize: 18)
         return lbl
     }()
-    // image view
     private lazy var featureImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 5
@@ -63,7 +60,6 @@ final class IOSTHomeListTableViewCell: IOSTGenericTableViewCell<FactsList>, IOST
         imageView.clipsToBounds = true
         return imageView
     }()
-    // description label
     private lazy var featureDescriptionLabel: UILabel = {
         let lbl = UILabel()
         lbl.numberOfLines = 0
@@ -78,7 +74,6 @@ final class IOSTHomeListTableViewCell: IOSTGenericTableViewCell<FactsList>, IOST
         self.selectionStyle = .none
         self.setupView() // initilal setup
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -94,10 +89,8 @@ extension IOSTHomeListTableViewCell {
     }
     //layout setup
     private func setupLayout() {
-        // Title label constraint setup
         MasonryHelper.addConstraint(parentView: self, view: self.featureTitleLabel, toViews:
             [.left, .right, .top], leftRightPadding: 20, topBottomPadding: 8)
-        // ImageView label constraint setup
         MasonryHelper.addConstraint(parentView: self, view: self.featureImageView, toViews:
             [.left, .right], leftRightPadding: 20)
         MasonryHelper.addConstraint(parentView: self.featureTitleLabel, view: self.featureImageView, toViews:
@@ -105,11 +98,9 @@ extension IOSTHomeListTableViewCell {
         self.featureImageView.mas_makeConstraints { (make) in
             self.featureImageViewHeightConstraint = make?.height.equalTo()(0)
         }
-        // Description label constraint setup
         MasonryHelper.addConstraint(parentView: self.featureImageView, view: self.featureDescriptionLabel, toViews:
             [.bottomToTop], topBottomPadding: 5)
         MasonryHelper.addConstraint(parentView: self, view: self.featureDescriptionLabel, toViews:
             [.left, .right, .bottom], leftRightPadding: 20, topBottomPadding: 8)
-        
     }
 }
