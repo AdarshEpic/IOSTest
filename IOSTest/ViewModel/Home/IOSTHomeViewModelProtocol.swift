@@ -10,7 +10,3 @@ import Foundation
 protocol IOSTHomeViewModelProtocols {
     var didSetNavigationTitle: ((_ title: String) -> Void)? { get set }
 }
-
-protocol SetNavigationBarTitleProtocol {
-    func setNavigationTitle(tilteString: String)
-}

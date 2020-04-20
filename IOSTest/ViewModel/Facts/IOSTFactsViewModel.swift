@@ -11,10 +11,7 @@ import Foundation
 class IOSTFactsViewModel: NSObject, IOSTFactsViewModelProtocol {
     var didSetNavigationTitle: ((String) -> Void)?
     public weak var datasource: IOSTFactsViewModelDataSource?
-    //initlal setup
-    override init() {
-        super.init()
-    }
+    //API
     public func initiateRequest() {
         FactsService().request { [weak self] (status, response) in
             guard let strongSelf = self else { return }

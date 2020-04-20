@@ -11,8 +11,3 @@ import Foundation
 class IOSTHomeViewModel: NSObject, IOSTHomeViewModelProtocols {
     public var didSetNavigationTitle: ((_ title: String) -> Void)?
 }
-extension IOSTHomeViewModel: SetNavigationBarTitleProtocol {
-    func setNavigationTitle(tilteString: String) {
-        self.didSetNavigationTitle?(tilteString)
-    }
-}

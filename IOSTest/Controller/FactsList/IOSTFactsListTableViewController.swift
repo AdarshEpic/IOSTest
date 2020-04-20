@@ -16,7 +16,6 @@ final class IOSTFactsListTableViewController: IOSTGenericTableViewController<Fac
             self.items = rows
         }
     }
-    public var setNavigationBarTitleProtocol: SetNavigationBarTitleProtocol?
     public var viewModel: IOSTFactsViewModelProtocol!
     override func viewDidLoad() {
         super.viewDidLoad()
