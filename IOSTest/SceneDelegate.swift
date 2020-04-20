@@ -21,6 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         //Initialization - rootviewController initialization
         let navigationController = UINavigationController(rootViewController: IOSTHomeViewController())
+        navigationController.navigationBar.prefersLargeTitles = true
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         //Configure App Delegate

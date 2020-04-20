@@ -34,6 +34,8 @@ final class IOSTFactsListTableViewController: IOSTGenericTableViewController<Fac
         tableView.isAccessibilityElement = true
         tableView.accessibilityIdentifier = "factTableView"
         self.tableView.allowsSelection = false
+        self.tableView.contentInset = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 10)
+
     }
     private func prepareViewModel() {
         viewModel = IOSTFactsViewModel()
@@ -53,6 +55,8 @@ final class IOSTFactsListTableViewController: IOSTGenericTableViewController<Fac
         let animationHandler: ((UIViewControllerTransitionCoordinatorContext) -> Void) = { _ in }
         let completionHandler: ((UIViewControllerTransitionCoordinatorContext) -> Void) = { [weak self] (context) in
             // This block will be called when rotation will be completed
+            self?.tableView.beginUpdates()
+            self?.tableView.endUpdates()
             self?.tableView.reloadData()
         }
         coordinator.animate(alongsideTransition: animationHandler, completion: completionHandler)

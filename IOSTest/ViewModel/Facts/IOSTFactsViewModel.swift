@@ -18,7 +18,13 @@ class IOSTFactsViewModel: NSObject, IOSTFactsViewModelProtocol {
             switch status {
             case .success:
                 guard let factModel = response as? FactsModel else { return }
-                strongSelf.datasource?.didReceivedData(response: factModel,
+                var dataList = [FactsList]()
+                factModel.listData?.forEach({ (item) in
+                    guard (item.title != nil) || item.imageHref != nil || item.rowDescription != nil else { return }
+                    dataList.append(item)
+                })
+                let factResult = FactsModel(viewTitle: factModel.viewTitle, listData: dataList)
+                strongSelf.datasource?.didReceivedData(response: factResult,
                                                        message: NSLocalizedString("loadingContents", comment: ""))
                 strongSelf.didSetNavigationTitle?(factModel.viewTitle ?? "")
             case .failure, .none, .some(.networkIssue):

@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if iOS_VERSION_LESS_THAN(version: "13.0") {
             self.window = UIWindow(frame: UIScreen.main.bounds)
             let navigationController = UINavigationController(rootViewController: IOSTHomeViewController())
+            navigationController.navigationBar.prefersLargeTitles = true
             window?.rootViewController = navigationController
             window?.makeKeyAndVisible()
         }

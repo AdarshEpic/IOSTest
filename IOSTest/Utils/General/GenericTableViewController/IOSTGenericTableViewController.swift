@@ -22,7 +22,7 @@ class IOSTGenericTableViewController<T, Cell: IOSTGenericTableViewCell<T>>: UITa
         super.init(style: .plain)
         self.tableView.register(Cell.self, forCellReuseIdentifier: String(describing: Cell.self))
         self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = 100
+        self.tableView.estimatedRowHeight = 500
         self.tableView.separatorStyle = .none
     }
     required init?(coder: NSCoder) {
