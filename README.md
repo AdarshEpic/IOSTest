@@ -15,13 +15,10 @@ OR
 
 Dependencies
 
-Cocoa pod Version  ~> 1.9.1
-XCODE Version ~> 13.3.1
-Swift Version -> 5.2
-iOS targeted Version -> 11 and above
+1. Cocoa pod Version  ~> 1.9.1
+2. XCODE Version ~> 13.3.1
+3. Swift Version -> 5.2
+4. iOS targeted Version -> 11 and above
 
-Usage Problems on pods and other user the zip file attached with the project
-If you are trouble with pods use bellow link to download the project
-"https://github.com/AdarshEpic/IOSTest/raw/master/IOSTest.zip"
 
 Thank you
