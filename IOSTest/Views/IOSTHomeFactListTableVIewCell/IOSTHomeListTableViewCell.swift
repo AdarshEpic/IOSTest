@@ -8,6 +8,7 @@
 
 import UIKit
 import Masonry
+import Kingfisher
 
 final class IOSTHomeListTableViewCell: IOSTGenericTableViewCell<FactsList>, IOSTHomeListCellViewProtocols {
     //load view protocol
@@ -23,14 +24,14 @@ final class IOSTHomeListTableViewCell: IOSTGenericTableViewCell<FactsList>, IOST
             self.featureImageView.loadImage(with: imageString, completion: { (image) in
                 guard let loadedImage = image else {
                     self.changeHeightOfImageView(height: 0)
-                    self.featureImageView.sd_cancelCurrentImageLoad()
+                    self.featureImageView.kf.cancelDownloadTask()
                     return
                 }
                 self.changeHeightOfImageView(height: self.getCalculatedHeight(image: loadedImage))
             })
         } else {
             self.changeHeightOfImageView(height: 0)
-            self.featureImageView.sd_cancelCurrentImageLoad()
+            self.featureImageView.kf.cancelDownloadTask()
         }
         self.featureDescriptionLabel.text = value?.rowDescription
     }
