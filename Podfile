@@ -9,8 +9,6 @@ target 'IOSTest' do
   pod 'Masonry', '1.1.0'
   # Style Formatter Framework
   pod 'SwiftLint', '0.39.2'
-  # Image Loader
-  pod 'SDWebImage', '5.0'
   # Reachabily Framework
   pod 'ReachabilitySwift', '5.0.0'
   # Toast
@@ -20,13 +18,9 @@ target 'IOSTest' do
 
   target 'IOSTestTests' do
     inherit! :search_paths
-    # Pods for testing
-     pod 'SDWebImage', '5.0'
   end
 
   target 'IOSTestUITests' do
-    # Pods for testing
-     pod 'SDWebImage', '5.0'
   end
 
 end
