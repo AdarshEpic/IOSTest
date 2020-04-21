@@ -5,6 +5,9 @@
       location = "group:IOSTest.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:../SDWebImage/SDWebImage.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
