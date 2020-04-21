@@ -14,7 +14,7 @@
 		4603F884244AC7A9002A035F /* ApiPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4603F883244AC7A9002A035F /* ApiPath.swift */; };
 		4603F886244ACFD7002A035F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4603F885244ACFD7002A035F /* Localizable.strings */; };
 		4603F89A244B2130002A035F /* IOSTFactsListTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4603F899244B2130002A035F /* IOSTFactsListTableViewControllerTests.swift */; };
-		462D4371244ED1BF002FA1BB /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462D4370244ED1BF002FA1BB /* SDWebImage.framework */; };
+		462D437A244ED565002FA1BB /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462D4379244ED565002FA1BB /* SDWebImage.framework */; };
 		4666D677244B4D7A00F3C5D9 /* FactServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4666D676244B4D7A00F3C5D9 /* FactServiceMock.swift */; };
 		4666D679244B505100F3C5D9 /* FactsServiceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4666D678244B505100F3C5D9 /* FactsServiceProtocols.swift */; };
 		4666D67C244B5BAB00F3C5D9 /* IOSTFactsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4666D67A244B52FD00F3C5D9 /* IOSTFactsViewModelTests.swift */; };
@@ -74,7 +74,7 @@
 		4603F885244ACFD7002A035F /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		4603F899244B2130002A035F /* IOSTFactsListTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSTFactsListTableViewControllerTests.swift; sourceTree = "<group>"; };
 		462D436E244ECF16002FA1BB /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		462D4370244ED1BF002FA1BB /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "../../Documents/SDWebImage 0002-04-21 12-30-27/Products/Library/Frameworks/SDWebImage.framework"; sourceTree = "<group>"; };
+		462D4379244ED565002FA1BB /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
 		4666D676244B4D7A00F3C5D9 /* FactServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactServiceMock.swift; sourceTree = "<group>"; };
 		4666D678244B505100F3C5D9 /* FactsServiceProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsServiceProtocols.swift; sourceTree = "<group>"; };
 		4666D67A244B52FD00F3C5D9 /* IOSTFactsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSTFactsViewModelTests.swift; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				462D4371244ED1BF002FA1BB /* SDWebImage.framework in Frameworks */,
+				462D437A244ED565002FA1BB /* SDWebImage.framework in Frameworks */,
 				7EA602CBED9AA26C96D9FD66 /* Pods_IOSTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -237,7 +237,7 @@
 		46F778772449A6B6006C4ED4 = {
 			isa = PBXGroup;
 			children = (
-				462D4370244ED1BF002FA1BB /* SDWebImage.framework */,
+				462D4379244ED565002FA1BB /* SDWebImage.framework */,
 				46F778822449A6B6006C4ED4 /* IOSTest */,
 				46F778992449A6B8006C4ED4 /* IOSTestTests */,
 				46F778A42449A6B8006C4ED4 /* IOSTestUITests */,
@@ -884,6 +884,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = IOSTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -904,6 +908,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = IOSTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
