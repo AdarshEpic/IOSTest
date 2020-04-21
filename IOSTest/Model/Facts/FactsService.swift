@@ -13,6 +13,6 @@ final class FactsService: NetworkManager <FactsModel> {
         requestUrl = ApiPath.facts
         requestMethod = .get
         formatterRequired = true
-        super.perform(params: EmptyRequest(), completion: completion)
+        super.perform(completion: completion)
     }
 }

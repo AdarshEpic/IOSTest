@@ -11,10 +11,8 @@ import Foundation
 @testable import IOSTest
 
 final class IOSTFactViewModelDataSourceMock: IOSTFactsViewModelDataSource {
-    
     var response: FactsModel?
     var message: String?
-    
     func didReceivedData(response: FactsModel?, message: String?) {
         self.response = response
     }

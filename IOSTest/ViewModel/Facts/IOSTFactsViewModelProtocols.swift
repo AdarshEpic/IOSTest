@@ -9,7 +9,7 @@
 import Foundation
 
 protocol IOSTFactsViewModelProtocol: class {
-    
+    var didSetNavigationTitle: ((_ title: String) -> Void)? { get set }
     var datasource: IOSTFactsViewModelDataSource? { get set }
     func initiateRequest()
 }

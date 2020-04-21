@@ -12,15 +12,12 @@ import Foundation
 @testable import IOSTest
 
 class IOSTFactsListTableViewControllerTests: XCTestCase {
-    
     private var app: XCUIApplication!
-    
     override func setUp() {
         continueAfterFailure = false
         app = XCUIApplication()
         app.launch()
     }
-    
     func testForCellExistence() {
         let detailstable = app.tables.matching(identifier: "factTableView")
         let firstCell = detailstable.cells.element(matching: .cell, identifier: "factTVC_0_0")
@@ -29,7 +26,6 @@ class IOSTFactsListTableViewControllerTests: XCTestCase {
         let mobWaiter = XCTWaiter.wait(for: [expectationEval], timeout: 10.0)
         XCTAssert(XCTWaiter.Result.completed == mobWaiter, "Test Case Failed.")
     }
-    
     func testForCellSelection() {
         let detailstable = app.tables.matching(identifier: "factTableView")
         let firstCell = detailstable.cells.element(matching: .cell, identifier: "factTVC_0_0")
@@ -39,7 +35,6 @@ class IOSTFactsListTableViewControllerTests: XCTestCase {
         XCTAssert(XCTWaiter.Result.completed == waiter, "Test Case Failed.")
         firstCell.tap()
     }
-    
     func testLabelExistenceOnTable() {
         let detailstable = app.tables.matching(identifier: "factTableView")
         let firstCell = detailstable.cells.element(matching: .cell, identifier: "factTVC_0_0")
@@ -51,13 +46,10 @@ class IOSTFactsListTableViewControllerTests: XCTestCase {
         let factImageView = firstCell.images["factImageView"]
         XCTAssertTrue(factImageView.exists, "imageView not exist.")
     }
-    
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-    
     func testExample() {
         print("UITest")
     }
-    
 }

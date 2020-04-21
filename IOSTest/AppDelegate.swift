@@ -10,18 +10,16 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
     var window: UIWindow?
-    
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         if iOS_VERSION_LESS_THAN(version: "13.0") {
             self.window = UIWindow(frame: UIScreen.main.bounds)
-            let navigationController = IOSTNavigationController(rootViewController: IOSTHomeViewController())
+            let navigationController = UINavigationController(rootViewController: IOSTHomeViewController())
+            navigationController.navigationBar.prefersLargeTitles = true
             window?.rootViewController = navigationController
             window?.makeKeyAndVisible()
         }
-
         return true
     }
 

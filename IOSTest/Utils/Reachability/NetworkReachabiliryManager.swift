@@ -10,10 +10,8 @@ import Foundation
 import Reachability
 
 class NetworkReachabilityManager: NSObject {
-    
     var reachability: Reachability!
     private static let shared: NetworkReachabilityManager = { return NetworkReachabilityManager() }()
-    
     override init() {
         super.init()
         do {

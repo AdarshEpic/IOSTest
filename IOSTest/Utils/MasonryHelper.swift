@@ -12,32 +12,41 @@ import Masonry
 class MasonryHelper {
     // MARK: Constraint with parent view
     static func addConstraint(parentView: UIView, view: UIView,
-                              toViews: [ViewConstraints], leftRightPadding: CGFloat = 0,
-                              topBottomPadding: CGFloat = 0, centerPadding: CGFloat = 0) {
+                              toViews: [ViewConstraints], left: CGFloat = 0, right: CGFloat = 0, top: CGFloat = 0,
+                              bottom: CGFloat = 0, center: CGFloat = 0) {
+        let padding = UIEdgeInsets(top: top, left: left,
+                                   bottom: bottom, right: right)
         view.mas_makeConstraints { (make) in
             toViews.forEach { (viewConstraints) in
                 switch viewConstraints {
                 case .left:
-                    make?.left.equalTo()(parentView.mas_left)?.with().offset()(leftRightPadding)
+                    make?.left.equalTo()(parentView.mas_left)?.with().offset()(padding.left)
                 case .right:
-                    make?.right.equalTo()(parentView.mas_right)?.with().offset()(-leftRightPadding)
+                    make?.right.equalTo()(parentView.mas_right)?.with().offset()(padding.right)
                 case .top:
-                    make?.top.equalTo()(parentView.mas_top)?.with().offset()(topBottomPadding)
+                    make?.top.equalTo()(parentView.mas_top)?.with().offset()(padding.top)
                 case .bottom:
-                    make?.bottom.equalTo()(parentView.mas_bottom)?.with().offset()(-topBottomPadding)
+                    make?.bottom.equalTo()(parentView.mas_bottom)?.with().offset()(padding.bottom)
                 case .leftMargin:
-                    make?.left.equalTo()(parentView.mas_leftMargin)?.with()?.offset()(leftRightPadding)
+                    make?.leftMargin.equalTo()(parentView.mas_left)?.with()?.offset()(padding.left)
                 case .topMargin:
-                    make?.top.equalTo()(parentView.mas_topMargin)?.with()?.offset()(topBottomPadding)
+                    make?.top.equalTo()(parentView.mas_topMargin)?.with()?.offset()(padding.top)
                 case .bottomMargin:
-                    make?.bottom.equalTo()(parentView.mas_bottomMargin)?.with()?.offset()(-topBottomPadding)
+                    make?.bottom.equalTo()(parentView.mas_bottomMargin)?.with()?.offset()(padding.bottom)
                 case .rightMargin:
-                    make?.right.equalTo()(parentView.mas_rightMargin)?.with()?.offset()(-leftRightPadding)
+                    make?.rightMargin.equalTo()(parentView.mas_right)?.with()?.offset()(padding.right)
                 case .bottomToTop:
-                    make?.top.equalTo()(parentView.mas_bottom)?.with()?.offset()(topBottomPadding)
+                    make?.top.equalTo()(parentView.mas_bottom)?.with()?.offset()(padding.top)
+                case .rightToLeft:
+                    make?.right.equalTo()(parentView.mas_left)?.with()?.offset()(padding.right)
                 }
-                
             }
+        }
+    }
+    func makeConstrain(parentView: UIView, view: UIView, padding: CGFloat) {
+        let padding = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
+        view.mas_makeConstraints { (make) in
+            make?.edges.equalTo()(parentView)?.with()?.insets()(padding)
         }
     }
     // MARK: Dimension for the view
@@ -53,7 +62,6 @@ class MasonryHelper {
             }
         }
     }
-    
     // MARK: Dimension for the view
     static func makeCenterTo(parentView: UIView, view: UIView, toViews: [ViewCenter], padding: CGFloat = 0) {
         view.mas_makeConstraints { (make) in
@@ -78,12 +86,13 @@ enum ViewConstraints {
     case bottomMargin
     case rightMargin
     case bottomToTop
+    case rightToLeft
 }
 enum ViewDimensions {
     case height
     case width
 }
 enum ViewCenter {
-     case centerlHorizondal
+    case centerlHorizondal
     case centerVertical
 }

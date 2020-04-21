@@ -9,15 +9,11 @@
 import UIKit
 
 class IOSTGenericTableViewCell<T>: UITableViewCell {
-    
     var value: T? {
         didSet {
             setViewData()
         }
     }
-    
-    open func setViewData() {
-        
-    }
+    open func setViewData() {}
 
 }

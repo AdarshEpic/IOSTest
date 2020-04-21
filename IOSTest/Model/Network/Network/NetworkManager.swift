@@ -9,34 +9,25 @@
 import Foundation
 import Reachability
 typealias RequestCompletion = (_ error: APIResultStatus?, _ data: Any?) -> Void
-class NetworkManager<T: Decodable>: NSObject, NetworkManagerProtocol {
-   
+class NetworkManager<T: Decodable>: NSObject {
     var completionBlock: RequestCompletion!
     var requestMethod: HTTPMethod!
     var requestUrl: String!
     var formatterRequired: Bool = false
-    
     // MARK: Setup Root
     func setupRoot() -> URL {
         let finalRequestString = Environment.rootURL + Environment.apiKey + "/" + requestUrl
         return URL(string: finalRequestString)!
-        
     }
     // MARK: Request
-    func perform<M: Encodable>(params: M? = nil, completion: @escaping RequestCompletion) {
+    func perform(completion: @escaping RequestCompletion) {
         let url = setupRoot()
         var request: URLRequest = URLRequest(url: url)
         request.httpMethod = requestMethod.rawValue
         NetworkReachabilityManager.isReachable { (status) in
             if status {
-                //geting post body
-                if self.requestMethod != HTTPMethod.get {
-                    let jsonBody = try? JSONEncoder().encode(params)
-                    request.httpBody = jsonBody
-                }
                 //create data task
                 let dataTask = URLSession.shared.dataTask(with: request) { data, _, err  in
-                    
                     guard err == nil else {
                         completion(.failure, err?.localizedDescription ?? "")
                         print("reqeust error: ", err?.localizedDescription ?? "")
@@ -80,7 +71,6 @@ class NetworkManager<T: Decodable>: NSObject, NetworkManagerProtocol {
             }
         }
     }
-    
 }
 
 //SERVICE STATUS

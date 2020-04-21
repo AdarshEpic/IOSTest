@@ -9,43 +9,34 @@
 import UIKit
 import KSToastView
 
-final class IOSTFactsListTableViewController: IOSTGenericTableViewController<FactsList, IOSTHomeListTableViewCell>,
-                                        IOSFactsTableViewProtocols {
-    // ui model
+final class IOSTFactsListTableViewController: IOSTGenericTableViewController<FactsList, IOSTHomeListTableViewCell> {
     internal var factItems: FactsModel? {
         didSet {
             guard let rows = factItems?.listData else { return }
             self.items = rows
         }
     }
-    
     public var viewModel: IOSTFactsViewModelProtocol!
-    
-    var didSetTitle: ((_ title: String) -> Void)? // title setup listener
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addRefreshController() // adding refresh controller
         self.prepareViewModel()
         self.setupView()
-       
     }
-    
-    // from parent class: refreshing task
+    //From parent class
     override func refreshData(_ sender: UIRefreshControl) {
         print("refreshing data")
         self.refreshControl?.endRefreshing()
         viewModel.initiateRequest()
         self.tableView.reloadData()
-        
     }
-    
     private func setupView() {
         tableView.isAccessibilityElement = true
         tableView.accessibilityIdentifier = "factTableView"
         self.tableView.allowsSelection = false
+        self.tableView.contentInset = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 10)
+
     }
-    
     private func prepareViewModel() {
         viewModel = IOSTFactsViewModel()
         viewModel.datasource = self
@@ -59,20 +50,17 @@ final class IOSTFactsListTableViewController: IOSTGenericTableViewController<Fac
         cell.accessibilityIdentifier = String(format: "factTVC_%d_%d",
         indexPath.section, indexPath.row)
     }
-    
     // this will be triggered when orientation is taking place
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        let animationHandler: ((UIViewControllerTransitionCoordinatorContext) -> Void) = { _ in
-            // This block will be called several times during rotation,
-            // so if you want your tableView change more smooth reload it here too.
-        }
+        let animationHandler: ((UIViewControllerTransitionCoordinatorContext) -> Void) = { _ in }
         let completionHandler: ((UIViewControllerTransitionCoordinatorContext) -> Void) = { [weak self] (context) in
             // This block will be called when rotation will be completed
+            self?.tableView.beginUpdates()
+            self?.tableView.endUpdates()
             self?.tableView.reloadData()
         }
         coordinator.animate(alongsideTransition: animationHandler, completion: completionHandler)
     }
-    
     override func tableView(_ tableView: UITableView,
                             willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.alpha = 0
@@ -92,16 +80,7 @@ extension IOSTFactsListTableViewController: IOSTHomeCellLayoutUpdateProtocol {
 extension IOSTFactsListTableViewController: IOSTFactsViewModelDataSource {
     func didReceivedData(response: FactsModel?, message: String?) {
         KSToastView.ks_showToast(message)
-        if response != nil {
-            self.factItems = response
-            if let viewTitle = response?.viewTitle {
-                self.didSetTitle?(viewTitle)
-            }
-            self.tableView.reloadData()
-        } else {
-            self.didSetTitle?(message ?? "")
-        }
-        
+        self.factItems = response
+        self.tableView.reloadData()
     }
-    
 }
